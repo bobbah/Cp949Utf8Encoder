@@ -1,11 +1,14 @@
 ﻿// Command-line utility to convert cp949-encoded files to UTF-8
 
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 
+Console.WriteLine($"Cp949Utf8Encoder v{Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion}");
+
 if (args.Length != 3)
 {
-    Console.WriteLine("Please call with 2 arguments, [input directory] [pattern] [output directory]");
+    Console.WriteLine("Please call with 3 arguments, [input directory] [pattern] [output directory]");
     return 1;
 }
 
